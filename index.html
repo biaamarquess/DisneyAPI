@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disney Universe</title>
+  <link rel="stylesheet" href="assets/styles/estilo.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/styles/estilo.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <img src="static/assets/logo_d.png" alt="Logo Disney Universe" class="logo-universe">
+    <nav>
+      <a href="#buscar">Buscar personagens</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img src="static/assets/esquerda.png" alt="Rolo de filme" class="film-reel left">
+      <img src="static/assets/jose.png" alt="" width="400px" class="lindo">
+
+      <div class="hero-content">
+        <img src="static/assets/disney.png" alt="Logo Disney+" class="logo-disney-plus">
+        <p>Descubra e pesquise seus personagens favoritos da Disney de forma rápida e divertida!</p>
+        <div class="featured-posters">
+          <img src="static/assets/enrolados.png" alt="Poster Tangled" class="poster">
+          <img src="static/assets/sapito.png" alt="Poster A Princesa e o Sapo" class="poster">
+          <img src="static/assets/gelo.png" alt="Poster Frozen" class="poster">
+        </div>
+      </div>
+
+      <img src="static/assets/divonicalinda.png" alt=""  width="300px" class="diva">
+      <img src="static/assets/direita.png" alt="Rolo de filme" class="film-reel right">
+    </section>
+
+    <section id="buscar">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Digite o nome do personagem...">
+        <button id="searchButton">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+          </svg>
+          Buscar
+        </button>
+      </div>
+    </section>
+
+    <section id="characters-container">
+      <div id="characters" class="grid-container"></div>
+      <div id="loading" class="loading-spinner" style="display: none;"></div>
+      <p id="no-results" class="no-results-message" style="display: none;">Nenhum personagem encontrado.</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
