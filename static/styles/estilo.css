@@ -1,0 +1,301 @@
+/* Reset e Configurações Globais */
+:root {
+  --primary-blue: #0A84FF;
+  --dark-background: #0C111B;
+  --card-background: #182233;
+  --text-color: #F9F9F9;
+  --text-secondary: #CACACA;
+  --search-bar-bg: #131A28;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--dark-background );
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+/* Animação de Fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  background-color: rgba(12, 17, 27, 0.8);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.logo-universe {
+  height: 40px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.site-header nav a {
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 300;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.site-header nav a:hover {
+  background-color: var(--primary-blue);
+  color: var(--text-color);
+}
+
+/* Seção Hero */
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
+  min-height: 60vh;
+  overflow: hidden;
+  
+}
+
+.hero-content {
+  margin-left: 30px;
+  z-index: 2;
+  animation: fadeIn 1s ease-out;
+  margin-top: -100px;
+}
+
+.logo-disney-plus {
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.0rem;
+  max-width: 500px;
+  margin: 0 auto 70px;
+  color: var(--text-secondary);
+}
+
+.featured-posters {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.poster {
+  width: 150px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.poster:hover {
+  transform: scale(1.1) translateY(-10px);
+  box-shadow: 0 15px 40px rgba(10, 132, 255, 0.4);
+}
+
+.film-reel {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.film-reel.left { 
+  left: -10px; 
+  z-index: -1;
+}
+.film-reel.right {
+   right: -10px; 
+   z-index: -1;
+  }
+
+/* Seção de Pesquisa */
+#buscar {
+  padding: 40px 20px;
+  background-color: var(--dark-background);
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--search-bar-bg);
+  border-radius: 50px;
+  padding: 8px;
+  border: 1px solid #2a3b52;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#searchInput {
+  
+  flex-grow: 1;
+  border: none;
+  background: transparent;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: var(--text-color);
+  outline: none;
+}
+
+#searchInput::placeholder {
+  color: var(--text-secondary);
+}
+
+#searchButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--primary-blue);
+  color: var(--text-color);
+  border: none;
+  border-radius: 30px;
+  padding: 10px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#searchButton:hover {
+  background-color: #0077ED;
+  transform: scale(1.05);
+}
+
+/* Container de Personagens */
+#characters-container {
+  padding: 20px 5%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background-color: var(--card-background);
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.5s ease-out forwards;
+  opacity: 0; /* Inicia invisível para a animação */
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(10, 132, 255, 0.3);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: top;
+  background-color: #2a3b52;
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 15px 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Mensagens e Loading */
+.loading-spinner {
+  border: 5px solid #f3f3f33a;
+  border-top: 5px solid var(--primary-blue);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 50px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.no-results-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  padding: 50px 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hero-content p { font-size: 1rem; }
+  .logo-disney-plus { max-width: 250px; margin-top: 35px; margin-left: -20px;}
+  .poster { width: 120px; }
+  .film-reel { display: none; }
+  .grid-container { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px; }
+  .card h2 { font-size: 1rem; }
+
+  .diva{
+    display: none;
+  }
+  .lindo{
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header { padding: 15px 3%; }
+  .logo-universe { height: 30px; }
+  .featured-posters { gap: 10px; margin-left: -30px; }
+  .hero-content p { margin-left: -40px;}
+  .poster { width: 90px; }
+  .search-box { flex-direction: column; gap: 10px; border-radius: 20px; }
+  #searchButton { width: 100%; justify-content: center; }
+  .grid-container { grid-template-columns: 1fr 1fr; gap: 15px; }
+  .card img { height: 150px; }
+
+  .diva{
+    display: none;
+  }
+  .lindo{
+    display: none;
+  }
+}
+
+
+.lindo{
+  margin-left: -100px;
+  margin-top: -30px;
+}
+
+.diva{
+  margin-left: 20px;
+}
